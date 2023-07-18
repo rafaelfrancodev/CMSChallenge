@@ -1,0 +1,19 @@
+﻿@model Article
+
+<div style="display: flex;">
+    <div style="flex: 1;">
+        <h1>@Model.Title</h1>
+        <p>@Model.Content</p>
+    </div>
+    <div style="flex: 0 0 300px; margin-left: 20px;">
+        <h2>Related Articles</h2>
+        <ul>
+            @foreach (var keyword in Model.ArticleKeywords)
+            {
+                <li>
+                    <a href="@Url.Action("Detail", new { id = keyword.Article.Id })">@keyword.Article.Title</a>
+                </li>
+            }
+        </ul>
+    </div>
+</div>

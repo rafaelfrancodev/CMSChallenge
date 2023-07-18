@@ -1,0 +1,12 @@
+﻿@model List<Article>
+
+<h1>Articles</h1>
+
+<ul>
+    @foreach (var article in Model)
+    {
+        <li>
+            <a href="@Url.Action("Detail", new { id = article.Id })">@article.Title</a>
+        </li>
+    }
+</ul>
